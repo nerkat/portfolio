@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./bundle.js"></script>
+  <style src="./bundle.css"></style>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+</body>
+
+</html>
+
+<script>
+  let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.animate([
+          {
+             transform: 'translateY(0px)',
+             opacity: 0,
+             filter: 'blur(0px)'
+             },
+          { transform: 'translateY(100px)',
+            opacity: 1,
+            filter: 'blur(10px)'
+          }
+        ], {
+          duration: 1000,
+          iterations: 1,
+          easing: 'ease-in-out',
+          fill: 'forwards',
+          direction: 'normal',
+        });
+      }
+    });
+  }, { rootMargin: "0px 0px -200px 0px" });
+
+  let target = '.shopify-section';
+  document.querySelectorAll(target).forEach((i) => {
+    if (i) {
+      observer.observe(i);
+    }
+  });
+</script>
