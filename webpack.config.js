@@ -5,6 +5,8 @@ const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 // module exports
 module.exports = {
+    // mode
+    mode: 'development',
     // entries
     entry: {
         bundle: {
@@ -75,10 +77,11 @@ module.exports = {
     },
     // dev server config 
     devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    compress: true,
-    port: 9000,
-  }
+        open: true,
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 9000,
+    }
 };
