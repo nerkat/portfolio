@@ -1,9 +1,25 @@
-
 // Import all the styles
 @import "base/vars.scss";
 
+html {
+    height: 100%;
+}
 
-body{
-    padding: 10px;
+body {
+    height: 100%;
     background-color: $page-background;
+    margin: 0;
+    display: flex;
+}
+
+.content-card {
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $content-background;
+    box-shadow: $box-shadow;
+    border-radius: $content-border-radius;
+    background-image: $content-background-image;
 }
