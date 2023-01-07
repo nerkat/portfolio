@@ -16,12 +16,12 @@ body {
 
 * {
     font-family: $font-family;
-    font-size: 12px;
+    font-size: 1.2vw;
 }
 
 .content-card {
     flex: 1;
-    margin: 20px 10px;
+    margin: 1vw 2vw;
     display: flex;
     flex-direction: column;
     background-color: $content-background;
@@ -33,7 +33,7 @@ body {
     background-position: bottom left;
 
     header {
-        padding: 60px;
+        padding: 4vw;
         display: flex;
         justify-content: space-between;
 
@@ -42,19 +42,19 @@ body {
         }
 
         .logo {
-            font-size: 27px;
+            font-size: 2vw;
         }
 
         nav {
             display: flex;
-            gap: 32px;
+            gap: 2vw;
 
             .nav-item {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                padding: 12px 20px;
+                padding: 1vw 1.5vw;
                 transition: $transition;
                 cursor: pointer;
 
@@ -69,32 +69,32 @@ body {
         display: flex;
         flex: 1;
         justify-content: flex-end;
+        padding: 0 5vw;
 
         .content-container {
             width: 35%;
-            padding-right: 32px;
 
             .about {
                 h3 {
-                    font-size: 20px;
+                    font-size: 1.5vw;
                     color: $accent-color;
                     margin: 0;
                 }
 
                 h1 {
-                    font-size: 52px;
+                    font-size: 3.6vw;
                     margin: 0;
                 }
 
                 h4 {
-                    font-size: 14px;
+                    font-size: 1vw;
                     color: $text-secondary;
                     margin: 0;
                 }
 
                 p {
-                    margin: 32px 0;
-                    line-height: 32px;
+                    margin: 2vw 0;
+                    line-height: 2vw;
                 }
             }
         }
