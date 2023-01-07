@@ -1,81 +1,43 @@
 const path = require('path');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-// module exports
 module.exports = {
-    // mode
-    mode: 'development',
-    // entries
     entry: {
-        bundle: {
-            import: './js/theme.js',
-            filename: '../dist/[name].js'
-        }
+        main: './src/script/index.js',
     },
-    // module
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+        }),
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+        }),
+    ],
     module: {
         rules: [
-            // typescript
             {
-                test: /\.tsx?$/,
-                loader: 'babel-loader',
-            },
-            // javascript
-            {
-                test: /\.(js)$/,
-                exclude: /node_modules/,
-                use: ['babel-loader'],
-            },
-            // css
-            {
-                test: /\.(css)$/,
+                test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            url: false,
-                        },
-                    },
-                    'postcss-loader',
+                    'css-loader',
+                    'sass-loader',
                 ],
             },
-            // sass/scss
             {
-                test: /\.(s(a|c)ss)$/,
+                test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            implementation: require("sass"),
-                            sourceMap: true,
-                            sassOptions: {
-                                outputStyle: "compressed",
-                            },
-                        },
-                    },
+                    'file-loader',
                 ],
             },
         ],
     },
-    plugins: [
-        // remove empty js files
-        new RemoveEmptyScriptsPlugin(),
-        // extract css from js files to separate files
-        new MiniCssExtractPlugin({
-            filename: '../dist/[name].css',
-        }),
-    ],
-    // resolve
-    resolve: {
-        // extensions
-        extensions: ['.scss', '.css', '.js', '.ts'],
-    },
-    // dev server config 
     devServer: {
         open: true,
         static: {
@@ -85,3 +47,4 @@ module.exports = {
         port: 9000,
     }
 };
+
