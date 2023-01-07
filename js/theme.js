@@ -1,4 +1,4 @@
 
-import '../css/theme.scss';
+import '../css/theme.css';
 
 import './libs';
