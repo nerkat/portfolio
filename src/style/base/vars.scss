@@ -9,10 +9,26 @@ $content-background: #221A37;
 
 // shadows
 $box-shadow: 0px 0px 75px 35px #00000042;
+$content-box-shadow: 0px 0px 20px 13px #a60ac726;
+$text-shadow: 4px 4px 0px #00000040;
+$text-shadow-secondary: 0px 4px 10px #A60AC7;
 
 //borders
 $border-radius: 10px;
 $content-border-radius: 100px;
 
 //backgrounds
-$content-background-image: url("/src/assets/background-image.png");
+$content-background-image: url("/src/assets/images/background-image.png");
+
+// fonts
+@font-face {
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/src/assets/fonts/Alata-Regular.ttf");
+}
+$font-family: 'Aharoni';
+$font-family-secondary: 'Alata';
+
+// transitions
+$transition: 0.3s ease-in-out;
