@@ -10,12 +10,13 @@ body {
     background-color: $page-background;
     margin: 0;
     display: flex;
-    text-shadow: $text-shadow;
-    color: $text-main;
+
 }
 
 * {
     font-family: $font-family;
+    text-shadow: $text-shadow;
+    color: $text-main;
     font-size: 1.2vw;
 }
 
@@ -42,7 +43,9 @@ body {
         }
 
         .logo {
-            font-size: 2vw;
+            font-size: 3vw;
+            display: flex;
+            align-items: center;
         }
 
         nav {
