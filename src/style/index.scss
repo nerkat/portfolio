@@ -17,7 +17,7 @@ body {
     font-family: $font-family;
     text-shadow: $text-shadow;
     color: $text-main;
-    font-size: 1.2vw;
+    font-size: 1vw;
 }
 
 .content-card {
@@ -63,6 +63,7 @@ body {
 
                 &:hover {
                     text-shadow: $text-shadow-secondary;
+                    transform: translateY(-4px);
                 }
             }
         }
@@ -75,7 +76,7 @@ body {
         padding: 0 5vw;
 
         .content-container {
-            width: 35%;
+            width: 49%;
 
             .about {
                 h3 {
