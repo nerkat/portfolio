@@ -36,6 +36,17 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif|ttf)$/,
                 type: 'asset/resource'
             },
+            {
+                test: /\.html$/i,
+                use: 'html-loader'
+            },
+            {
+                test: /\.(png|jpg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name]-[hash][ext]'
+                }
+            }
         ],
     },
     devServer: {
