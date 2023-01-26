@@ -1,5 +1,6 @@
 @import "base/vars.scss";
 @import "base/btn.scss";
+@import "slider.scss";
 
 html {
     height: 100%;
@@ -76,7 +77,9 @@ body {
         padding: 0 5vw;
 
         .content-container {
-            width: 49%;
+            width: 35%;
+            max-height: 65vh;
+            overflow: hidden;
 
             .about {
                 h3 {
@@ -99,6 +102,36 @@ body {
                 p {
                     margin: 2vw 0;
                     line-height: 2vw;
+                }
+            }
+
+            .resume {
+                .resume-item {
+                    padding: 10px;
+                    display: flex;
+
+                    .item-titles {
+                        text-align: right;
+                        font-size: 12px;
+
+                        .item-date {
+                            color: $accent-color;
+                        }
+
+                        .item-company {
+                            color: $text-secondary;
+                        }
+                    }
+
+                    .item-sep {
+                        width: 2px;
+                        height: 100%;
+                        background: $hightlight-color;
+                        box-shadow: $purple-glow;
+                        border-radius: 10px;
+                    }
+
+                    .item-info {}
                 }
             }
         }

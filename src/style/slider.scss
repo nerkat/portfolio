@@ -1,0 +1,32 @@
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  .slides-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      flex: 1 0 100%;
+      scroll-snap-align: start;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      /* hide the scrollbar */
+      background: transparent;
+      /* optional: remove the default background color */
+    }
+  }
+
+}
