@@ -1,26 +1,32 @@
 // code that handles zooming of images
 // on '.gallery div' click, get the image src and copy it - with fixes positioning to the original image position and size
 
-const gallery = document.querySelector(".gallery");
-const images = document.querySelectorAll(".gallery img");
+const gallery = document.querySelectorAll(".gallery");
 const zoom = document.querySelector(".zoom");
 const zoomImg = document.querySelector(".zoom img");
 const zoomPrev = document.querySelector(".zoom .zoom-prev");
 const zoomNext = document.querySelector(".zoom .zoom-next");
 const zoomClose = document.querySelector(".zoom .zoom-close");
+var zoomState;
+var images;
 
-gallery.addEventListener("click", (e) => {
-  if (e.target.tagName === "IMG") {
-    zoomImg.src = e.target.src;
-    zoomImg.style.top = e.target.y + "px";
-    zoomImg.style.left = e.target.x + "px";
-    zoomImg.style.width = e.target.clientWidth + "px";
-    zoomImg.style.height = e.target.clientHeight + "px";
-    zoom.classList.add("active");
-    setTimeout(() => {
-      zoom.classList.add("zoom-in");
-    }, 200);
-  }
+gallery.forEach((gallery) => {
+  gallery.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      zoomState = e.target.classList.contains("projects") ? "projects" : "certificates";
+      images = e.target.closest('.gallery').querySelectorAll("img");
+      zoomImg.src = e.target.src;
+      zoomImg.style.top = e.target.y + "px";
+      zoomImg.style.left = e.target.x + "px";
+      zoomImg.style.width = e.target.clientWidth + "px";
+      zoomImg.style.height = e.target.clientHeight + "px";
+      zoom.classList.add("active");
+      setTimeout(() => {
+        zoom.classList.add("zoom-in");
+      }, 200);
+    }
+
+  });
 });
 
 zoomClose.addEventListener("click", () => {

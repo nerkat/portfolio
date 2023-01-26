@@ -83,6 +83,7 @@ body {
             overflow: hidden;
 
             .about {
+
                 h3 {
                     font-size: 1.5vw;
                     color: $accent-color;
@@ -179,10 +180,18 @@ body {
                 padding: 1vw;
                 padding-top: 5vw;
 
+                &.certificates {
+                    div {
+                        img {
+                            object-fit: contain;
+                        }
+                    }
+                }
+
                 div {
                     cursor: pointer;
                     width: 48%;
-                    height: 17vw;
+                    height: auto;
                     box-shadow: $content-box-shadow-dark;
                     border-radius: 1vw;
                     overflow: hidden;
@@ -193,7 +202,7 @@ body {
                         box-shadow: $content-box-shadow;
                     }
 
-                    &:nth-child(odd) {
+                    &:nth-child(even) {
                         margin-top: -5vw;
                     }
 
