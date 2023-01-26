@@ -32,5 +32,8 @@ changeActiveLink = (activeLink) => {
     link.classList.remove("active");
   });
   activeLink.classList.add("active");
-
 };
+
+setTimeout(() => {
+  changeActiveLink(aboutLink);
+}, 4000);
