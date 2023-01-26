@@ -104,44 +104,106 @@
 @keyframes moveAroundAnimation {
     0% {
         transform: translateX(0vw) translateY(0vw);
+        filter: blur(1px);
     }
 
     20% {
         transform: translateX(3vw) translateY(2vw);
+        filter: blur(1px);
     }
 
     20% {
         transform: translateX(2vw) translateY(3vw);
+        filter: blur(2px);
     }
 
     40% {
         transform: translateX(3vw) translateY(5vw);
+        filter: blur(2px);
     }
 
     50% {
         transform: translateX(1vw) translateY(7vw);
+        filter: blur(1px);
     }
 
     60% {
         transform: translateX(3vw) translateY(9vw);
+        filter: blur(2px);
     }
 
     70% {
         transform: translateX(0vw) translateY(6vw);
+        filter: blur(1px);
     }
 
     80% {
         transform: translateX(4vw) translateY(4vw);
+        filter: blur(2px);
     }
 
     90% {
         transform: translateX(2vw) translateY(1vw);
+        filter: blur(1px);
     }
 
     100% {
         transform: translateX(0vw) translateY(0vw);
+        filter: blur(1px);
     }
 
+}
 
+@keyframes moveAroundAnimation2 {
+    0% {
+        transform: translateX(0vw) translateY(0vw);
+        filter: blur(1px);
+    }
 
+    20% {
+        transform: translateX(3vw) translateY(2vw);
+        filter: blur(1px);
+    }
+
+    20% {
+        transform: translateX(2vw) translateY(6vw);
+        filter: blur(2px);
+    }
+
+    40% {
+        transform: translateX(3vw) translateY(5vw);
+        filter: blur(2px);
+    }
+
+    50% {
+        transform: translateX(1vw) translateY(7vw);
+        filter: blur(1px);
+    }
+
+    60% {
+        transform: translateX(3vw) translateY(9vw);
+        filter: blur(2px);
+    }
+
+    70% {
+        transform: translateX(0vw) translateY(2vw);
+        filter: blur(1px);
+    }
+
+    80% {
+        transform: translateX(4vw) translateY(4vw);
+        filter: blur(2px);
+    }
+
+    90% {
+        transform: translateX(2vw) translateY(1vw);
+        filter: blur(1px);
+    }
+
+    100% {
+        transform: translateX(0vw) translateY(0vw);
+        filter: blur(1px);
+    }
+
+    
 }

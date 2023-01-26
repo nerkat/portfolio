@@ -271,7 +271,7 @@ body {
       position: absolute;
       width: 3vw;
       height: 3vw;
-      opacity: 0.7;
+      filter: blur(1px);
 
       &:nth-child(1) {
         top: 10vw;
@@ -296,18 +296,63 @@ body {
     }
 
   }
+
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+
+    .particle {
+      position: absolute;
+      width: 3vw;
+      height: 3vw;
+      animation-delay: 3s;
+
+      &:nth-child(1) {
+        bottom: 14vw;
+        animation-delay: 1s;
+        left: 13vw;
+        animation: moveAroundAnimation2 50s ease-in-out infinite;
+      }
+
+      &:nth-child(2) {
+        top: 25vw;
+        left: 2vw;
+        animation: moveAroundAnimation2 60s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+
+      &:nth-child(3) {
+        border-radius: 50%;
+        filter: hue-rotate(292deg);
+        width: 3vw;
+        height: 3vw;
+        left: 6vw;
+        bottom: 3.5vw;
+      }
+
+
+
+
+    }
+  }
 }
 
 .social {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1vw;
+  gap: 0.5vw;
   animation: fadeInAnimation 1s ease-in-out;
   position: fixed;
-  bottom: 0.5vw;
-  right: 10vw;
-
+  bottom: 8vw;
+  right: 1.5vw;
+  flex-direction: column;
 
   a {
     border-radius: 50%;
@@ -315,7 +360,7 @@ body {
     align-items: center;
     text-decoration: none;
     transition: $transition;
-    box-shadow: $purple-glow2;
+    box-shadow: $content-box-shadow-dark;
     animation: slideInAnimation 1s ease-in-out;
     width: 2vw;
     height: 2vw;
