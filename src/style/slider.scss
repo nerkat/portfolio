@@ -1,6 +1,7 @@
 .slider-wrapper {
   position: relative;
   overflow: hidden;
+  height: 100%;
 
   .slides-container {
     height: 100%;
@@ -19,6 +20,23 @@
       height: 100%;
       flex: 1 0 100%;
       scroll-snap-align: start;
+      overflow-y: auto;
+
+      //scrollbar
+      &::-webkit-scrollbar {
+        width: 0.5vw;
+        background-color: $page-background;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $accent-color;
+        border-radius: 0.5vw;
+        transition: $transition;
+
+        &:hover {
+          background-color: $highlight-color;
+        }
+      }
     }
 
     &::-webkit-scrollbar {
