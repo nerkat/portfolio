@@ -1,6 +1,7 @@
 @import "base/vars.scss";
 @import "base/btn.scss";
 @import "slider.scss";
+@import "zoom.scss";
 
 html {
     height: 100%;
@@ -179,6 +180,7 @@ body {
                 padding-top: 5vw;
 
                 div {
+                    cursor: pointer;
                     width: 48%;
                     height: 17vw;
                     box-shadow: $content-box-shadow-dark;

@@ -1,0 +1,77 @@
+.zoom {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  align-items: center;
+
+  .zoom-button {
+    position: absolute;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: 5vw;
+    background-color: $content-background;
+    box-shadow: $content-box-shadow;
+    border-radius: 50%;
+    height: 4vw;
+    width: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transition;
+    user-select: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &:hover {
+      background-color: $highlight-color;
+    }
+  }
+
+  .zoom-close {
+    background-size: 80%;
+    top: 2vw;
+    right: 4vw;
+    background-image: url(../assets/images/zoom/close.svg);
+  }
+
+  .zoom-prev {
+    background-size: 50%;
+    left: 4vw;
+    background-image: url(../assets/images/zoom/arrow.svg);
+  }
+
+  .zoom-next {
+    background-size: 50%;
+    right: 4vw;
+    background-image: url(../assets/images/zoom/arrow.svg);
+    transform: rotate(180deg);
+  }
+
+  &.active {
+    display: flex;
+  }
+
+  &.zoom-in {
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      right: 0 !important;
+      background-color: $content-background;
+    }
+  }
+
+  img {
+    object-fit: contain;
+    position: fixed;
+    transition: $transition;
+  }
+}
