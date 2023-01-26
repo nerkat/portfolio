@@ -51,23 +51,30 @@
 
 @keyframes slideInAnimation {
     0% {
-        transform: translateX(30vw) translateY(15vw) rotate(90deg);
+        transform: translateX(20vw) translateY(-20vw);
         opacity: 0;
     }
+
 
     20% {
-        transform: translateX(30vw) translateY(15vw) rotate(90deg);
-        opacity: 0;
-    }
-
-
-    70% {
-        transform: translateX(20vw) translateY(0vw) rotate(0deg);
+        transform: translateX(0vw) translateY(-20vw);
         opacity: 1;
     }
 
+    50% {
+        transform: translateX(0vw) translateY(-20vw);
+        opacity: 1;
+    }
+
+
+    90% {
+        transform: translateX(0vw) translateY(0vw);
+        opacity: 1;
+    }
+
+
     100% {
-        transform: translateX(0vw) translateY(0vw) rotate(0deg);
+        transform: translateX(0vw) translateY(0vw);
         opacity: 1;
     }
 
@@ -103,52 +110,52 @@
 
 @keyframes moveAroundAnimation {
     0% {
-        transform: translateX(0vw) translateY(0vw);
+        transform: translateX(0vw) translateY(0vw) rotate(0deg);
         filter: blur(1px);
     }
 
     20% {
-        transform: translateX(3vw) translateY(2vw);
+        transform: translateX(3vw) translateY(2vw) rotate(23deg);
         filter: blur(1px);
     }
 
     20% {
-        transform: translateX(2vw) translateY(3vw);
+        transform: translateX(2vw) translateY(3vw) rotate(12deg);
         filter: blur(2px);
     }
 
     40% {
-        transform: translateX(3vw) translateY(5vw);
+        transform: translateX(3vw) translateY(5vw) rotate(4deg);
         filter: blur(2px);
     }
 
     50% {
-        transform: translateX(1vw) translateY(7vw);
+        transform: translateX(1vw) translateY(7vw) rotate(5deg);
         filter: blur(1px);
     }
 
     60% {
-        transform: translateX(3vw) translateY(9vw);
+        transform: translateX(3vw) translateY(9vw) rotate(34deg);
         filter: blur(2px);
     }
 
     70% {
-        transform: translateX(0vw) translateY(6vw);
+        transform: translateX(0vw) translateY(6vw) rotate(45deg);
         filter: blur(1px);
     }
 
     80% {
-        transform: translateX(4vw) translateY(4vw);
+        transform: translateX(4vw) translateY(4vw) rotate(78deg);
         filter: blur(2px);
     }
 
     90% {
-        transform: translateX(2vw) translateY(1vw);
+        transform: translateX(2vw) translateY(1vw) rotate(25deg);
         filter: blur(1px);
     }
 
     100% {
-        transform: translateX(0vw) translateY(0vw);
+        transform: translateX(0vw) translateY(0vw) rotate(0deg);
         filter: blur(1px);
     }
 
@@ -156,54 +163,54 @@
 
 @keyframes moveAroundAnimation2 {
     0% {
-        transform: translateX(0vw) translateY(0vw);
+        transform: translateX(0vw) translateY(0vw) rotate(0deg);
         filter: blur(1px);
     }
 
     20% {
-        transform: translateX(3vw) translateY(2vw);
+        transform: translateX(3vw) translateY(2vw) rotate(180deg);
         filter: blur(1px);
     }
 
     20% {
-        transform: translateX(2vw) translateY(6vw);
+        transform: translateX(2vw) translateY(6vw) rotate(423deg);
         filter: blur(2px);
     }
 
     40% {
-        transform: translateX(3vw) translateY(5vw);
+        transform: translateX(3vw) translateY(5vw) rotate(54deg);
         filter: blur(2px);
     }
 
     50% {
-        transform: translateX(1vw) translateY(7vw);
+        transform: translateX(1vw) translateY(7vw) rotate(97deg);
         filter: blur(1px);
     }
 
     60% {
-        transform: translateX(3vw) translateY(9vw);
+        transform: translateX(3vw) translateY(9vw) rotate(34deg);
         filter: blur(2px);
     }
 
     70% {
-        transform: translateX(0vw) translateY(2vw);
+        transform: translateX(0vw) translateY(2vw) rotate(0deg);
         filter: blur(1px);
     }
 
     80% {
-        transform: translateX(4vw) translateY(4vw);
+        transform: translateX(4vw) translateY(4vw) rotate(65deg);
         filter: blur(2px);
     }
 
     90% {
-        transform: translateX(2vw) translateY(1vw);
+        transform: translateX(2vw) translateY(1vw) rotate(0deg);
         filter: blur(1px);
     }
 
     100% {
-        transform: translateX(0vw) translateY(0vw);
+        transform: translateX(0vw) translateY(0vw) rotate(0deg);
         filter: blur(1px);
     }
 
-    
+
 }
