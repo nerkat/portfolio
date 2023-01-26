@@ -14,8 +14,8 @@ gallery.forEach((gallery) => {
   gallery.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
       zoomState = e.target.classList.contains("projects") ? "projects" : "certificates";
-      images = e.target.closest('.gallery').querySelectorAll("img");
-      zoomImg.src = e.target.src;
+      images = e.target.closest('.gallery').querySelectorAll("img.hidden");
+      zoomImg.src = e.target.parentElement.querySelector("img.hidden").src;
       zoomImg.style.top = e.target.y + "px";
       zoomImg.style.left = e.target.x + "px";
       zoomImg.style.width = e.target.clientWidth + "px";
