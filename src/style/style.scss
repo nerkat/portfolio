@@ -23,7 +23,7 @@ body {
 
 .content-card {
   flex: 1;
-  margin: 1vw 2vw;
+  margin: 1vw;
   display: flex;
   flex-direction: column;
   background-color: $content-background;
@@ -354,7 +354,7 @@ body {
   animation: fadeInAnimation 1s ease-in-out;
   position: fixed;
   bottom: 6vw;
-  right: 1.5vw;
+  right: .5vw;
   flex-direction: column;
 
   a {
