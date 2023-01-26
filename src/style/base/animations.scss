@@ -99,3 +99,49 @@
     }
 
 }
+
+
+@keyframes moveAroundAnimation {
+    0% {
+        transform: translateX(0vw) translateY(0vw);
+    }
+
+    20% {
+        transform: translateX(3vw) translateY(2vw);
+    }
+
+    20% {
+        transform: translateX(2vw) translateY(3vw);
+    }
+
+    40% {
+        transform: translateX(3vw) translateY(5vw);
+    }
+
+    50% {
+        transform: translateX(1vw) translateY(7vw);
+    }
+
+    60% {
+        transform: translateX(3vw) translateY(9vw);
+    }
+
+    70% {
+        transform: translateX(0vw) translateY(6vw);
+    }
+
+    80% {
+        transform: translateX(4vw) translateY(4vw);
+    }
+
+    90% {
+        transform: translateX(2vw) translateY(1vw);
+    }
+
+    100% {
+        transform: translateX(0vw) translateY(0vw);
+    }
+
+
+
+}
