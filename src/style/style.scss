@@ -124,9 +124,6 @@ body {
       max-height: 66vh;
       overflow: hidden;
       animation: fadeInAnimation 3s ease-in-out;
-      background: radial-gradient($content-background 32%, transparent 120%);
-      box-shadow: -4px 20px 17px 15px $content-background;
-      border-radius: 3vw;
 
       .about {
         padding-left: 2vw;
