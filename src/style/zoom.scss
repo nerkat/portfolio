@@ -9,6 +9,7 @@
   align-items: center;
 
   .zoom-button {
+    opacity: 0;
     position: absolute;
     padding: 1rem;
     cursor: pointer;
@@ -34,6 +35,7 @@
   }
 
   .zoom-close {
+    transform: translateY(-5vw);
     background-size: 80%;
     top: 2vw;
     right: 4vw;
@@ -41,16 +43,17 @@
   }
 
   .zoom-prev {
+    transform: translateX(-5vw);
     background-size: 50%;
     left: 4vw;
     background-image: url(../assets/images/zoom/arrow.svg);
   }
 
   .zoom-next {
+    transform: translateX(5vw) rotate(180deg);
     background-size: 50%;
     right: 4vw;
     background-image: url(../assets/images/zoom/arrow.svg);
-    transform: rotate(180deg);
   }
 
   &.active {
@@ -58,6 +61,22 @@
   }
 
   &.zoom-in {
+    .zoom-button {
+      opacity: 1;
+
+      &.zoom-close {
+        transform: translateY(0vw);
+      }
+
+      &.zoom-prev {
+        transform: translateX(0vw);
+      }
+
+      &.zoom-next {
+        transform: translateX(0vw) rotate(180deg);
+      }
+    }
+
     img {
       width: 100% !important;
       height: 100% !important;

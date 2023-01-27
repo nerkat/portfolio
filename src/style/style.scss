@@ -15,6 +15,7 @@ body {
   text-shadow: $text-shadow;
   color: $text-main;
   font-size: 0.8vw;
+  user-select: none;
 }
 
 .hidden {
@@ -402,17 +403,18 @@ body {
 
 }
 
-@media screen and (max-width: 768px) {
+@media (max-device-width: 768px) {
   * {
     font-size: 1.8vw;
   }
 
   .content-card {
-    header{
-      .logo{
+    header {
+      .logo {
         font-size: 4vw;
       }
     }
+
     content {
       .content-container {
         width: 100%;
