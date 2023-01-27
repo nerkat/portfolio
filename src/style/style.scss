@@ -477,6 +477,91 @@ body {
 
   .social {
     gap: 1.5vw;
+    bottom: 8vw;
+
+    a {
+      width: 4vw;
+      height: 4vw;
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 1.8vw;
+  }
+
+  .content-card {
+    header {
+      .logo {
+        font-size: 4vw;
+      }
+    }
+
+    content {
+      .content-container {
+        width: 100%;
+        max-height: 86vh;
+
+        .about {
+          padding-top: 4vw;
+
+          h3 {
+            font-size: 3.5vw;
+          }
+
+          h1 {
+            font-size: 5.6vw;
+          }
+
+          h4 {
+            font-size: 2vw;
+          }
+
+          p {
+            font-size: 2vw;
+            line-height: 3vw;
+          }
+        }
+
+        .resume {
+          .resume-item {
+            .item-titles {
+              .item-company {
+                font-size: 1.5vw;
+              }
+            }
+
+            .item-info {
+              padding: 2.8vw;
+
+              .item-job-desc {
+                padding: 0 0 0 2.6vw;
+                line-height: 3vw;
+              }
+
+              .item-job-title {
+                font-size: 3vw;
+              }
+            }
+          }
+        }
+
+        .gallery {
+          gap: 3vw;
+        }
+
+      }
+
+    }
+
+
+  }
+
+  .social {
+    gap: 1.5vw;
+    bottom: 8vw;
 
     a {
       width: 4vw;
