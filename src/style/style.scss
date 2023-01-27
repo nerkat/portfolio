@@ -53,6 +53,20 @@ body {
       display: flex;
       align-items: center;
       animation: enterAnimation 1s ease-in-out;
+
+      .mech-spinner {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:after {
+          animation: changeContent 30s linear infinite;
+          display: block;
+          content: "⠸";
+          font-size: 2vw;
+        }
+      }
     }
 
 
