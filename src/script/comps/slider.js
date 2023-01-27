@@ -7,23 +7,31 @@ const certificatesLink = document.querySelector("#nav-link-certificates");
 
 
 aboutLink.addEventListener("click", () => {
-  changeActiveLink(aboutLink);
   slidesContainer.scrollLeft = 0;
 });
 
 resumeLink.addEventListener("click", () => {
-  changeActiveLink(resumeLink);
   slidesContainer.scrollLeft = slide.clientWidth;
 });
 
 galleryLink.addEventListener("click", () => {
-  changeActiveLink(galleryLink);
   slidesContainer.scrollLeft = slide.clientWidth * 2;
 });
 
 certificatesLink.addEventListener("click", () => {
-  changeActiveLink(certificatesLink);
   slidesContainer.scrollLeft = slide.clientWidth * 3;
+});
+
+slidesContainer.addEventListener("scroll", () => {
+  if (slidesContainer.scrollLeft === 0) {
+    changeActiveLink(aboutLink);
+  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 3) {
+    changeActiveLink(certificatesLink);
+  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 2) {
+    changeActiveLink(galleryLink);
+  } else {
+    changeActiveLink(resumeLink);
+  }
 });
 
 changeActiveLink = (activeLink) => {
