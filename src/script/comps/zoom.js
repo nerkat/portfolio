@@ -35,6 +35,15 @@ zoomClose.addEventListener("click", () => {
 });
 
 zoomNext.addEventListener("click", () => {
+  next();
+});
+
+
+zoomPrev.addEventListener("click", () => {
+  prev();
+});
+
+next = function () {
   let nextImg = zoomImg.src;
   images.forEach((img, index) => {
     if (img.src === zoomImg.src) {
@@ -42,9 +51,9 @@ zoomNext.addEventListener("click", () => {
     }
   });
   zoomImg.src = nextImg;
-});
+}
 
-zoomPrev.addEventListener("click", () => {
+prev = function () {
   let prevImg = zoomImg.src;
   images.forEach((img, index) => {
     if (img.src === zoomImg.src) {
@@ -52,4 +61,21 @@ zoomPrev.addEventListener("click", () => {
     }
   });
   zoomImg.src = prevImg;
-});
+}
+
+let touchstartX = 0
+let touchendX = 0
+
+checkDirection = function () {
+  if (touchendX < touchstartX) { next(); }
+  if (touchendX > touchstartX) { prev(); }
+}
+
+zoom.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+zoom.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})

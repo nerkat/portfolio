@@ -509,6 +509,13 @@ body {
     header {
       .logo {
         font-size: 4vw;
+
+        .mech-spinner {
+
+          &:after {
+            font-size: 4vw;
+          }
+        }
       }
     }
 

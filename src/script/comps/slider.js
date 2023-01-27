@@ -34,6 +34,18 @@ slidesContainer.addEventListener("scroll", () => {
   }
 });
 
+slidesContainer.addEventListener("swiped-right", () => {
+  if (slidesContainer.scrollLeft === 0) {
+    changeActiveLink(aboutLink);
+  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 3) {
+    changeActiveLink(certificatesLink);
+  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 2) {
+    changeActiveLink(galleryLink);
+  } else {
+    changeActiveLink(resumeLink);
+  }
+});
+
 changeActiveLink = (activeLink) => {
   const links = document.querySelectorAll(".nav-item");
   links.forEach((link) => {
