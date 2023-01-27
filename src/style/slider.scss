@@ -21,6 +21,7 @@
       flex: 1 0 100%;
       scroll-snap-align: start;
       overflow-y: auto;
+      margin-right: 0.5vw;
 
       //scrollbar
       &::-webkit-scrollbar {

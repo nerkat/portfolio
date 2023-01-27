@@ -14,7 +14,7 @@ body {
   font-family: $font-family;
   text-shadow: $text-shadow;
   color: $text-main;
-  font-size: 1vw;
+  font-size: 0.8vw;
 }
 
 .hidden {
@@ -46,7 +46,7 @@ body {
     }
 
     .logo {
-      font-size: 3vw;
+      font-size: 2vw;
       display: flex;
       align-items: center;
       animation: enterAnimation 1s ease-in-out;
@@ -62,7 +62,8 @@ body {
         display: flex;
         align-items: center;
         text-decoration: none;
-      }
+        margin-right: 3vw;
+  }
 
       .nav-item {
         animation: popupAnimation 1s ease-in-out;
@@ -113,7 +114,7 @@ body {
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    padding: 0 5vw;
+    padding: 0 7vw;
 
     .content-container {
       width: 50%;
@@ -123,6 +124,7 @@ body {
 
 
       .about {
+        padding-left: 2vw;
 
         h3 {
           font-size: 1.5vw;
@@ -142,6 +144,7 @@ body {
         }
 
         p {
+          font-size: 1vw;
           margin: 1.3vw 0;
           line-height: 1.6vw;
         }
@@ -153,20 +156,22 @@ body {
           padding: 0.8vw;
           display: flex;
           gap: 1.6vw;
+          padding-left: 0;
 
           .item-titles {
             text-align: right;
             padding: 0.8vw;
             flex: 1;
+            padding-left: 0;
 
             .item-date {
-              font-size: 1.1vw;
               display: block;
               padding-bottom: 0.8vw;
               color: $accent-color;
             }
 
             .item-company {
+              font-size: 0.7vw;
               color: $text-secondary;
             }
           }
@@ -384,10 +389,15 @@ body {
       height: 100%;
       width: 100%;
       object-fit: contain;
+      filter: hue-rotate(0deg) brightness(1);
     }
 
     &:hover {
-      transform: scale(1.2);
+      transform: translateX(-0.25vw);
+
+      img {
+        filter: hue-rotate(-1deg) brightness(2.2);
+      }
     }
   }
 
