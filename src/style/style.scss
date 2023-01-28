@@ -135,6 +135,7 @@ body {
     padding: 0 7vw 0 3vw;
 
     .content-container {
+      z-index: 2;
       width: 50%;
       max-height: 66vh;
       overflow: hidden;
@@ -603,6 +604,31 @@ body {
 
       &:hover {
         transform: translateX(-1vw);
+      }
+    }
+  }
+
+  .particles {
+    .particle {
+      width: 12vw !important;
+      height: 12vw !important;
+    }
+  }
+
+  .shapes {
+    .shape {
+      width: 12vw !important;
+      height: 12vw !important;
+
+      &:nth-child(1) {
+        top: 61vw;
+        left: 46vw;
+      }
+
+      &:nth-child(2) {
+        bottom: 61vw;
+        right: 21vw;
+        left: auto;
       }
     }
   }
