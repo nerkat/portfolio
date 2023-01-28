@@ -54,6 +54,7 @@ body {
       display: flex;
       align-items: center;
       animation: enterAnimation 1s ease-in-out;
+      flex: 1;
 
       .mech-spinner {
         display: flex;
@@ -70,17 +71,22 @@ body {
     }
 
 
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      margin-right: 3vw;
+      margin-left: 2vw;
+
+      button {
+        animation: tadaAnimation 1s ease-in-out;
+        animation-delay: 1s;
+      }
+    }
 
     nav {
       display: flex;
       gap: 2vw;
-
-      a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        margin-right: 3vw;
-      }
 
       .nav-item {
         animation: popupAnimation 1s ease-in-out;
@@ -119,10 +125,6 @@ body {
         }
       }
 
-      button {
-        animation: tadaAnimation 1s ease-in-out;
-        animation-delay: 1s;
-      }
     }
   }
 
@@ -417,90 +419,6 @@ body {
 
 }
 
-@media (max-device-width: 768px) {
-  * {
-    font-size: 1.8vw;
-  }
-
-  .content-card {
-    header {
-      .logo {
-        font-size: 4vw;
-      }
-    }
-
-    content {
-      .content-container {
-        width: 100%;
-        max-height: 86vh;
-
-        .about {
-          padding-top: 4vw;
-
-          h3 {
-            font-size: 3.5vw;
-          }
-
-          h1 {
-            font-size: 5.6vw;
-          }
-
-          h4 {
-            font-size: 2vw;
-          }
-
-          p {
-            font-size: 2vw;
-            line-height: 3vw;
-          }
-        }
-
-        .resume {
-          .resume-item {
-            .item-titles {
-              .item-company {
-                font-size: 1.5vw;
-              }
-            }
-
-            .item-info {
-              padding: 2.8vw;
-
-              .item-job-desc {
-                padding: 0 0 0 2.6vw;
-                line-height: 3vw;
-              }
-
-              .item-job-title {
-                font-size: 3vw;
-              }
-            }
-          }
-        }
-
-        .gallery {
-          gap: 3vw;
-        }
-
-      }
-
-    }
-
-
-  }
-
-  .social {
-    gap: 1.5vw;
-    bottom: 8vw;
-
-    a {
-      width: 4vw;
-      height: 4vw;
-    }
-
-  }
-}
-
 @media (max-width: 768px) {
   * {
     font-size: 1.8vw;
@@ -589,5 +507,103 @@ body {
       height: 4vw;
     }
 
+  }
+}
+
+@media (max-width: 500px) {
+
+  .content-card {
+    header {
+      flex-wrap: wrap;
+
+      .logo {
+        font-size: 8vw;
+
+        .mech-spinner {
+          &:after {
+            font-size: 8vw;
+          }
+        }
+
+      }
+
+      nav {
+        order: 1;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 6vw;
+
+        .nav-item {
+          font-size: 4vw;
+        }
+      }
+
+      a {
+        margin-right: 0;
+
+        button {
+          font-size: 3vw;
+          padding: 2.5vw 6vw;
+        }
+      }
+    }
+
+    content {
+      padding: 0 3vw 0 3vw;
+
+      .content-container {
+        .about {
+          p {
+            font-size: 3vw;
+            line-height: 4vw;
+          }
+        }
+
+        .resume {
+          margin-top: 4vw;
+
+          .resume-item {
+            .item-titles {
+              max-width: 25%;
+
+              .item-date {
+                font-size: 3vw;
+              }
+
+              .item-company {
+                font-size: 2.5vw;
+              }
+            }
+
+            .item-info {
+              .item-job-title {
+                font-size: 5vw;
+                margin: 0 0 3.5vw 0;
+
+              }
+
+              .item-job-desc {
+                li {
+                  font-size: 3vw;
+                  line-height: 3.5vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .social {
+
+    a {
+      width: 8vw;
+      height: 8vw;
+
+      &:hover {
+        transform: translateX(-1vw);
+      }
+    }
   }
 }
