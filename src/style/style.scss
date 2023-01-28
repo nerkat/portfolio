@@ -16,6 +16,7 @@ body {
   color: $text-main;
   font-size: 0.8vw;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .hidden {
