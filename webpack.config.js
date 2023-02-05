@@ -28,8 +28,23 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                            sassOptions:
+                            {
+                                minimize: false,
+                                outputStyle: 'expanded'
+                            }
+                        },
+                    },
                 ],
             },
             {
@@ -53,5 +68,8 @@ module.exports = {
         static: './dist',
         open: true,
     },
+    optimization: {
+        minimize: false,
+    }
 };
 
