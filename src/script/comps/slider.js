@@ -1,59 +1,37 @@
+// Select elements and store in variables for better performance
 const slidesContainer = document.getElementById("slides-container");
 const slide = document.querySelector(".slide");
-const aboutLink = document.querySelector("#nav-link-about");
-const resumeLink = document.querySelector("#nav-link-resume");
-const galleryLink = document.querySelector("#nav-link-gallery");
-const certificatesLink = document.querySelector("#nav-link-certificates");
+const navLinks = document.querySelectorAll(".nav-item");
 
-
-aboutLink.addEventListener("click", () => {
-  slidesContainer.scrollLeft = 0;
+// Add click event listeners for navigation links
+navLinks.forEach((link, index) => {
+  link.addEventListener("click", () => {
+    slidesContainer.scrollLeft = slide.clientWidth * index;
+    changeActiveLink(link);
+  });
 });
 
-resumeLink.addEventListener("click", () => {
-  slidesContainer.scrollLeft = slide.clientWidth;
-});
-
-galleryLink.addEventListener("click", () => {
-  slidesContainer.scrollLeft = slide.clientWidth * 2;
-});
-
-certificatesLink.addEventListener("click", () => {
-  slidesContainer.scrollLeft = slide.clientWidth * 3;
-});
-
+// Add scroll event listener for slides container to change active link
 slidesContainer.addEventListener("scroll", () => {
-  if (slidesContainer.scrollLeft === 0) {
-    changeActiveLink(aboutLink);
-  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 3) {
-    changeActiveLink(certificatesLink);
-  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 2) {
-    changeActiveLink(galleryLink);
-  } else {
-    changeActiveLink(resumeLink);
-  }
+  const currentSlide = Math.floor(slidesContainer.scrollLeft / slide.clientWidth);
+  changeActiveLink(navLinks[currentSlide]);
 });
 
+// Add swipe event listener for slides container to change active link
 slidesContainer.addEventListener("swiped-right", () => {
-  if (slidesContainer.scrollLeft === 0) {
-    changeActiveLink(aboutLink);
-  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 3) {
-    changeActiveLink(certificatesLink);
-  } else if (slidesContainer.scrollLeft >= slide.clientWidth * 2) {
-    changeActiveLink(galleryLink);
-  } else {
-    changeActiveLink(resumeLink);
-  }
+  const currentSlide = Math.floor(slidesContainer.scrollLeft / slide.clientWidth);
+  changeActiveLink(navLinks[currentSlide]);
 });
 
-changeActiveLink = (activeLink) => {
-  const links = document.querySelectorAll(".nav-item");
-  links.forEach((link) => {
+// Function to change active link class
+function changeActiveLink(activeLink) {
+  navLinks.forEach((link) => {
     link.classList.remove("active");
   });
   activeLink.classList.add("active");
-};
+}
 
+// Set initial active link after 4 seconds
 setTimeout(() => {
-  changeActiveLink(aboutLink);
+  changeActiveLink(navLinks[0]);
 }, 4000);

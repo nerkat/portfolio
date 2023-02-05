@@ -1,49 +1,54 @@
-// code that handles zooming of images
-// on '.gallery div' click, get the image src and copy it - with fixes positioning to the original image position and size
-
+// Code that handles zooming of images
+// On '.gallery div' click, get the image src and copy it with fixes positioning to the original image position and size
 const gallery = document.querySelectorAll(".gallery");
 const zoom = document.querySelector(".zoom");
 const zoomImg = document.querySelector(".zoom img");
 const zoomPrev = document.querySelector(".zoom .zoom-prev");
 const zoomNext = document.querySelector(".zoom .zoom-next");
 const zoomClose = document.querySelector(".zoom .zoom-close");
-var zoomState;
-var images;
+let zoomState;
+let images;
 
+// Handle zoom event on '.gallery div' click
 gallery.forEach((gallery) => {
   gallery.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
+      // Get the zoom state and images for the current gallery
       zoomState = e.target.classList.contains("projects") ? "projects" : "certificates";
       images = e.target.closest('.gallery').querySelectorAll("img.hidden");
+      // Set the zoom image src and fix its positioning
       zoomImg.src = e.target.parentElement.querySelector("img.hidden").src;
       zoomImg.style.top = e.target.y + "px";
       zoomImg.style.left = e.target.x + "px";
       zoomImg.style.width = e.target.clientWidth + "px";
       zoomImg.style.height = e.target.clientHeight + "px";
+      // Show the zoom modal
       zoom.classList.add("active");
       setTimeout(() => {
         zoom.classList.add("zoom-in");
       }, 200);
     }
-
   });
 });
 
+// Handle close event
 zoomClose.addEventListener("click", () => {
   zoom.classList.remove("active");
   zoom.classList.remove("zoom-in");
 });
 
+// Handle next event
 zoomNext.addEventListener("click", () => {
   next();
 });
 
-
+// Handle previous event
 zoomPrev.addEventListener("click", () => {
   prev();
 });
 
-next = function () {
+// Get the next image
+const next = function () {
   let nextImg = zoomImg.src;
   images.forEach((img, index) => {
     if (img.src === zoomImg.src) {
@@ -51,9 +56,10 @@ next = function () {
     }
   });
   zoomImg.src = nextImg;
-}
+};
 
-prev = function () {
+// Get the previous image
+const prev = function () {
   let prevImg = zoomImg.src;
   images.forEach((img, index) => {
     if (img.src === zoomImg.src) {
@@ -61,21 +67,9 @@ prev = function () {
     }
   });
   zoomImg.src = prevImg;
-}
+};
 
-let touchstartX = 0
-let touchendX = 0
+let touchstartX = 0;
+let touchendX = 0;
 
-checkDirection = function () {
-  if (touchendX < touchstartX) { next(); }
-  if (touchendX > touchstartX) { prev(); }
-}
-
-zoom.addEventListener('touchstart', e => {
-  touchstartX = e.changedTouches[0].screenX
-})
-
-zoom.addEventListener('touchend', e => {
-  touchendX = e.changedTouches[0].screenX
-  checkDirection()
-})
+// Check touch
