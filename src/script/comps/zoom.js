@@ -13,20 +13,15 @@ let images;
 gallery.forEach((gallery) => {
   gallery.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
-      // Get the zoom state and images for the current gallery
-      zoomState = e.target.classList.contains("projects") ? "projects" : "certificates";
+      // Get the images for the current gallery
       images = e.target.closest('.gallery').querySelectorAll("img.hidden");
-      // Set the zoom image src and fix its positioning
+
+      // Get the image src
       zoomImg.src = e.target.parentElement.querySelector("img.hidden").src;
-      zoomImg.style.top = e.target.y + "px";
-      zoomImg.style.left = e.target.x + "px";
-      zoomImg.style.width = e.target.clientWidth + "px";
-      zoomImg.style.height = e.target.clientHeight + "px";
+
       // Show the zoom modal
       zoom.classList.add("active");
-      setTimeout(() => {
-        zoom.classList.add("zoom-in");
-      }, 200);
+      zoom.classList.add("zoom-in");
     }
   });
 });
@@ -68,8 +63,3 @@ const prev = function () {
   });
   zoomImg.src = prevImg;
 };
-
-let touchstartX = 0;
-let touchendX = 0;
-
-// Check touch
