@@ -1,40 +1,44 @@
+// page styles 
+
 html {
   height: 100%;
 }
 
 body {
   height: 100%;
-  background-color: $page-background;
+  background-color: var(--page-background);
   margin: 0;
   display: flex;
   overflow: hidden;
 }
 
 * {
-  font-family: $font-family;
-  text-shadow: $text-shadow;
-  color: $text-main;
+  font-family: var(--font-family);
+  text-shadow: var(--text-shadow);
+  color: var(--text-main);
   font-size: 0.8vw;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
 
+// .hidden helper class
 .hidden {
   display: none;
 }
 
+// content card styles
 .content-card {
   flex: 1;
   margin: 1vw;
   display: flex;
   flex-direction: column;
-  background-color: $content-background;
-  box-shadow: $content-box-shadow;
-  border-radius: $content-border-radius;
-  transition: $transition;
+  background-color: var(--content-background);
+  box-shadow: var(--content-box-shadow);
+  border-radius: var(--content-border-radius);
+  transition: var(--transition);
   animation: fadeInAnimation2 0.5s ease-in-out;
   position: relative;
-  background-image: $content-background-image;
+  background-image: var(--content-background-image);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom left;
@@ -46,7 +50,7 @@ body {
     justify-content: space-between;
 
     * {
-      font-family: $font-family-secondary;
+      font-family: var(--font-family-secondary);
     }
 
     .logo {
@@ -95,7 +99,7 @@ body {
         justify-content: center;
         align-items: center;
         padding: 1vw 1.5vw;
-        transition: $transition;
+        transition: var(--transition);
         cursor: pointer;
 
         &:nth-child(1) {
@@ -116,11 +120,11 @@ body {
 
 
         &:hover {
-          text-shadow: $text-shadow-secondary;
+          text-shadow: var(--text-shadow-secondary);
         }
 
         &.active {
-          text-shadow: $text-shadow-secondary;
+          text-shadow: var(--text-shadow-secondary);
           transform: translateY(-0.2vw);
         }
       }
@@ -146,7 +150,7 @@ body {
 
         h3 {
           font-size: 1.5vw;
-          color: $accent-color;
+          color: var(--accent-color);
           margin: 0;
         }
 
@@ -157,7 +161,7 @@ body {
 
         h4 {
           font-size: 1vw;
-          color: $text-secondary;
+          color: var(--text-secondary);
           margin: 0;
         }
 
@@ -185,12 +189,12 @@ body {
             .item-date {
               display: block;
               padding-bottom: 0.8vw;
-              color: $accent-color;
+              color: var(--accent-color);
             }
 
             .item-company {
               font-size: 0.7vw;
-              color: $text-secondary;
+              color: var(--text-secondary);
             }
           }
 
@@ -208,8 +212,8 @@ body {
               display: block;
               width: 0.1vw;
               height: 100%;
-              background: $highlight-color;
-              box-shadow: $purple-glow;
+              background: var(--highlight-color);
+              box-shadow: var(--purple-glow);
               border-radius: 0.8vw;
             }
 
@@ -255,14 +259,14 @@ body {
           cursor: pointer;
           width: 48%;
           height: auto;
-          box-shadow: $content-box-shadow-dark;
+          box-shadow: var(--content-box-shadow-dark);
           border-radius: 1vw;
           overflow: hidden;
-          transition: $transition;
+          transition: var(--transition);
 
           &:hover {
             transform: scale(1.05);
-            box-shadow: $content-box-shadow;
+            box-shadow: var(--content-box-shadow);
           }
 
           &:nth-child(even) {
@@ -282,6 +286,7 @@ body {
 
 }
 
+// floating shapes
 .shapes {
   position: absolute;
   top: 0;
@@ -322,6 +327,7 @@ body {
 
 }
 
+// floating particles
 .particles {
   position: absolute;
   top: 0;
@@ -368,6 +374,7 @@ body {
   }
 }
 
+// social media icons
 .social {
   display: flex;
   justify-content: center;
@@ -385,8 +392,8 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: $transition;
-    box-shadow: $content-box-shadow-dark;
+    transition: var(--transition);
+    box-shadow: var(--content-box-shadow-dark);
     animation: slideInAnimation 1s ease-in-out;
     width: 2vw;
     height: 2vw;
@@ -421,6 +428,7 @@ body {
 
 }
 
+// tablet and mobile
 @media (max-width: 768px) {
   * {
     font-size: 1.8vw;
@@ -512,6 +520,7 @@ body {
   }
 }
 
+// mobile and smaller
 @media (max-width: 500px) {
 
   .content-card {

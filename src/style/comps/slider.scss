@@ -1,3 +1,5 @@
+// slider styles
+
 .slider-wrapper {
   position: relative;
   overflow: hidden;
@@ -26,16 +28,16 @@
       //scrollbar
       &::-webkit-scrollbar {
         width: 0.5vw;
-        background-color: $page-background;
+        background-color: var(--page-background);
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: $accent-color;
+        background-color: var(--accent-color);
         border-radius: 0.5vw;
-        transition: $transition;
+        transition: var(--transition);
 
         &:hover {
-          background-color: $highlight-color;
+          background-color: var(--highlight-color);
         }
       }
     }

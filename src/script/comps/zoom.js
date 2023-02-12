@@ -6,7 +6,6 @@ const zoomImg = document.querySelector(".zoom img");
 const zoomPrev = document.querySelector(".zoom .zoom-prev");
 const zoomNext = document.querySelector(".zoom .zoom-next");
 const zoomClose = document.querySelector(".zoom .zoom-close");
-let zoomState;
 let images;
 
 // Handle zoom event on '.gallery div' click
@@ -21,7 +20,6 @@ gallery.forEach((gallery) => {
 
       // Show the zoom modal
       zoom.classList.add("active");
-      zoom.classList.add("zoom-in");
     }
   });
 });
@@ -29,7 +27,6 @@ gallery.forEach((gallery) => {
 // Handle close event
 zoomClose.addEventListener("click", () => {
   zoom.classList.remove("active");
-  zoom.classList.remove("zoom-in");
 });
 
 // Handle next event
@@ -62,4 +59,27 @@ const prev = function () {
     }
   });
   zoomImg.src = prevImg;
-};
+}
+
+
+// Handle swipe events
+let touchstartX = 0
+let touchendX = 0
+
+// Get the direction of the swipe
+checkDirection = function () {
+  if (touchendX < touchstartX) { next(); }
+  if (touchendX > touchstartX) { prev(); }
+}
+
+// Add touch events
+zoom.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+
+// Add touch events
+zoom.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})

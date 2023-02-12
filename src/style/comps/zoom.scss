@@ -1,3 +1,5 @@
+// zoom styles
+
 .zoom {
   display: none;
   position: fixed;
@@ -15,22 +17,22 @@
     cursor: pointer;
     z-index: 1001;
     font-size: 5vw;
-    background-color: $content-background;
-    box-shadow: $content-box-shadow;
+    background-color: var(--content-background);
+    box-shadow: var(--content-box-shadow);
     border-radius: 50%;
     height: 4vw;
     width: 4vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: $transition;
+    transition: var(--transition);
     user-select: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 
     &:hover {
-      background-color: $highlight-color;
+      background-color: var(--highlight-color);
     }
   }
 
@@ -58,9 +60,6 @@
 
   &.active {
     display: flex;
-  }
-
-  &.zoom-in {
     .zoom-button {
       opacity: 1;
 
@@ -84,13 +83,13 @@
       top: 0 !important;
       bottom: 0 !important;
       right: 0 !important;
-      background-color: $content-background;
+      background-color: var(--content-background);
     }
   }
 
   img {
     object-fit: contain;
     position: fixed;
-    transition: $transition;
+    transition: var(--transition);
   }
 }

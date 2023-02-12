@@ -1,39 +1,29 @@
-// colors
-$page-background: #242424;
-$text-main: #E8E8E8;
-$text-secondary: #575757;
-$accent-color: #5D3974;
-$btn-background: #402166;
-$btn-background-secondary: #1E0042;
-$content-background: #221A37;
-$highlight-color: #A60AC7;
+    // fonts
+    @font-face {
+        font-family: 'Alata';
+        font-style: normal;
+        font-weight: 400;
+        src: url("/src/assets/fonts/Alata-Regular.ttf");
+    }
 
-// shadows
-$box-shadow: 0px 0px 75px 35px #00000042;
-$content-box-shadow-dark: 0px 0px 20px 13px #17011c26;
-$content-box-shadow: 0px 0px 20px 13px #a60ac726;
-$text-shadow: 4px 4px 0px #00000040;
-$text-shadow-secondary: 0px 4px 10px #A60AC7;
-$purple-glow: 0px 4px 4px #A60AC7;
-$purple-glow2: 0px 0px 19px 3px rgb(208 0 255 / 70%);
+    // variables
+    :root {
 
-//borders
-$border-radius: 0.7vw;
-$content-border-radius: 7vw;
-
-//backgrounds
-$content-background-image: url("/src/assets/images/background-image.png");
-
-// fonts
-@font-face {
-    font-family: 'Alata';
-    font-style: normal;
-    font-weight: 400;
-    src: url("/src/assets/fonts/Alata-Regular.ttf");
-}
-
-$font-family: 'Aharoni';
-$font-family-secondary: 'Alata';
-
-// transitions
-$transition: all 0.3s ease-in-out;
+        --page-background: #242424;
+        --text-main: #E8E8E8;
+        --text-secondary: #575757;
+        --accent-color: #5D3974;
+        --btn-background: #402166;
+        --content-background: #221A37;
+        --highlight-color: #A60AC7;
+        --box-shadow: 0px 0px 75px 35px #00000042;
+        --content-box-shadow-dark: 0px 0px 20px 13px #17011c26;
+        --content-box-shadow: 0px 0px 20px 13px #a60ac726;
+        --text-shadow: 4px 4px 0px #00000040;
+        --purple-glow: 0px 4px 4px #A60AC7;
+        --content-border-radius: 7vw;
+        --content-background-image: url("/src/assets/images/background-image.png");
+        --font-family: 'Aharoni';
+        --font-family-secondary: 'Alata';
+        --transition: all 0.3s ease-in-out;
+    }
