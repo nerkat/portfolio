@@ -12,7 +12,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
     },
-    devtool: 'inline-source-map',
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].css',
@@ -20,6 +19,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            minify: false
         }),
     ],
     module: {
@@ -30,14 +30,10 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true,
                             sassOptions:
                             {
                                 minimize: false,
@@ -48,18 +44,20 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(svg|gif|ttf)$/,
-                type: 'asset/resource'
-            },
-            {
                 test: /\.html$/i,
-                use: 'html-loader'
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        minimize: false,
+                    },
+                }
+
             },
             {
-                test: /\.(png|jpg)$/i,
+                test: /\.(png|jpg|svg|gif|ttf|ico|webmanifest)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[name]-[hash][ext]'
+                    filename: '[path][name][ext]',
                 }
             }
         ],

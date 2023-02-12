@@ -29,6 +29,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "devDependencies": {
+    "dynamic-webpack-entries": "^1.0.1",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
