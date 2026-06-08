@@ -6,7 +6,7 @@ This project captures a specific moment in AI and design history: when custom vi
 
 The result is intentionally dramatic, cyberpunk, and very much a product of the early Midjourney era.
 
-![AI-UI Portfolio](src/assets/images/background-image.png)
+<img src="src/assets/images/background-image.png" alt="AI-UI Portfolio" width="500">
 
 ## Live Site
 
